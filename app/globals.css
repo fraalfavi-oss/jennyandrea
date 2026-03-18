@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream font-body text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.85), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(199, 137, 109, 0.14), transparent 24%),
+    linear-gradient(180deg, #f8f3ec 0%, #f4ede3 46%, #f6f0e8 100%);
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    background-image 250ms ease;
+}
+
+.dark body {
+  @apply bg-[#1b1715] text-[#f6efe8];
+  background-image:
+    radial-gradient(circle at top left, rgba(147, 163, 140, 0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(199, 137, 109, 0.16), transparent 26%),
+    linear-gradient(180deg, #171311 0%, #1d1816 48%, #171311 100%);
+}
+
+::selection {
+  background: rgba(147, 163, 140, 0.28);
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+.section-spacing {
+  @apply py-20 sm:py-24 lg:py-28;
+}
+
+.section-label {
+  @apply mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/75 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-[#5b514b] shadow-sm backdrop-blur;
+}
+
+.dark .section-label {
+  @apply border-white/10 bg-white/5 text-[#d6c8bc];
+}
+
+.eyebrow-dot {
+  @apply h-2 w-2 rounded-full bg-terracotta;
+}
+
+.card-surface {
+  @apply rounded-[2rem] border border-white/70 bg-white/80 shadow-soft backdrop-blur-sm;
+}
+
+.dark .card-surface {
+  @apply border-white/10 bg-white/5 shadow-none;
+}
+
+.anchor-offset {
+  scroll-margin-top: 96px;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+}
